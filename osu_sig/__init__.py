@@ -104,7 +104,7 @@ def __format_param(param):
         res += "&{}&{}".format(xp[0], xp[1])
     elif xp[0] in param and xp[1] not in param and xp[0] is True:
         res += '&{}'.format(xp[0])
-    for key, val in param.items():
+    for key, val in list(param.items()):
         if key in bool_list and val is True:
             res += '&{}'.format(key)
         if key in int_list and isinstance(val, int):
